@@ -1,0 +1,122 @@
+\documentclass[letterpaper,10pt,titlepage]{article}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{listings}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\def\name{Bradley Imai and Daniel Ross}
+
+%pull in the necessary preamble matter for pygments output
+% \input{pygments.tex}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {CS444 ``operating systems'' files filesystem I/O},
+  pdftitle = {CS 444 Project 4},
+  pdfsubject = {CS 444 Project 4},
+  pdfpagemode = UseNone
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{3.5cm}
+
+        \textbf{Project 4}
+
+        \vspace{0.5cm}
+
+        \textbf{Bradley Imai and Daniel Ross}
+
+        \vspace{0.8cm}
+
+        CS 444\\
+        Spring 2017\\
+        22 May 2017\\
+
+        \vspace{1cm}
+
+        \textbf{Abstract}\\
+
+        \vspace{0.5cm}
+
+        text \vfill
+
+
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+\section{Design plan to use to implement the necessary algorithms}
+
+We will be utilization the slob algorithm designed by Matt Mackall. The first step is to add a program where we can isolate the best fit algorithm from the first fit algorithm. After isolating the algorithms we will add a system call that will return the value of free memory over free memory plus allocated memory.
+
+\section{Version Control Log Github}
+\begin{tabular}{lll} \textbf{Author}
+     & \textbf{Date}
+     & \textbf{Message}
+\\ \hline
+Bradimai & 2017-26-3 & Initial commit pushing starting files/latex file \\ \hline
+\end{tabular}
+
+\section{Work Log}
+\begin{tabular}{lll} \textbf{where}
+     & \textbf{Date}
+     & \textbf{what we did}
+
+\\ \hline
+Linc & 2017-26-2 & Start of project 4 \\ \hline
+\end{tabular}
+
+text
+
+\section{Project Questions}
+
+\textit{What do you think the main point of this assignment is?}\\
+
+text\\
+
+\textit{How did you personally approach the problem? Design decisions, algorithm, etc.}\\
+
+text\\
+
+\textit{How did you ensure your solution was correct? Testing details, for instance.}\\
+
+text \\
+
+\textit{What did you learn?}\\
+\begin{itemize}
+\item Understood how modules are built into the kernel
+\item How crypto library is used within the Kernel
+\item Gained experience working with poorly documented libraries
+\end{itemize}
+
+\end{document}
