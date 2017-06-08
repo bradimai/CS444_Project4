@@ -67,7 +67,8 @@
 
         \vspace{0.5cm}
 
-        text \vfill
+                Memory management is a key component in understanding the kernel memory allocation services.The SLOB/SLAB problem lies in the best fit algorithm where the best location in memory needs to be selected rather than the first for increased performance. The following approach utilizes in modifying SLOB's first fit algorithm to best fit to ensure maximum memory usage. The resulting program include a slob allocator utilizing best fit.
+ \vfill
 
 
     \end{center}
@@ -77,14 +78,20 @@
 
 \section{Design plan to use to implement the necessary algorithms}
 
-We will be utilization the slob algorithm designed by Matt Mackall. The first step is to add a program where we can isolate the best fit algorithm from the first fit algorithm. After isolating the algorithms we will add a system call that will return the value of free memory over free memory plus allocated memory.
+We will be utilization the slob algorithm designed by Matt Mackall.We will be adding our best fit version of slob to the default slob.c. The first step is to add a set of pre-processor statements where we can isolate the best fit algorithm from the first fit algorithm. After isolating the algorithms we will add a system call that will return the value of free memory over free memory plus allocated memory.
 
 \section{Version Control Log Github}
 \begin{tabular}{lll} \textbf{Author}
      & \textbf{Date}
      & \textbf{Message}
 \\ \hline
-Bradimai & 2017-26-3 & Initial commit pushing starting files/latex file \\ \hline
+Bradimai & 2017-5-26 & Initial commit pushing starting files/latex file \\ \hline
+DanRoss96 & 2017-6-1 & Original Slob.c file \\ \hline
+Bradimai & 2017-6-7 & new slob.c file \\ \hline
+DanRoss96 & 2017-6-8 & final push with system calls for project 4 \\ \hline
+Bradimaai & 2017-6-8 & final with writing assignment 4 \\ \hline
+
+
 \end{tabular}
 
 \section{Work Log}
@@ -93,30 +100,31 @@ Bradimai & 2017-26-3 & Initial commit pushing starting files/latex file \\ \hlin
      & \textbf{what we did}
 
 \\ \hline
-Linc & 2017-26-2 & Start of project 4 \\ \hline
-\end{tabular}
+Linc & 2017-5-26 & Start of project 4 \\ \hline
+Linc & 2017-6-1 & continued working on project 4 \\ \hline
+Library & 2017-6-7 & worked on the slob.c file \\ \hline
+Library & 2017-6-8 & added system calls to the slob.c file \\ \hline
+Library & 2017-6-8 & finished the project 4 and written part of the assignment \\ \hline
 
-text
+
+\end{tabular}
 
 \section{Project Questions}
 
 \textit{What do you think the main point of this assignment is?}\\
 
-text\\
+We thought that the main point of this assignment was to develop an understanding of memory management alongside figuring out the fundamentals of Linux system calls and how to utilize them to request services from the kernel. We also thought that understanding the best fit algorithm was another major learning factor in this assignment.\\
 
 \textit{How did you personally approach the problem? Design decisions, algorithm, etc.}\\
 
-text\\
+We first started by researching about slob.c. From there we decided to keep the original slob.c algorithm in our file but isolate it from our best fit algorithm. Then we added our three system calls to the table, header and the slob.c file.\\
 
 \textit{How did you ensure your solution was correct? Testing details, for instance.}\\
 
-text \\
+We wrote a script that tested the slob allocator by calling our system calls which displays the fragmentation of the current memory management. \\
+ \\
 
 \textit{What did you learn?}\\
-\begin{itemize}
-\item Understood how modules are built into the kernel
-\item How crypto library is used within the Kernel
-\item Gained experience working with poorly documented libraries
-\end{itemize}
+From this project we learned much about the Linux SLOB allocators, the best fit algorithm, and Linux kernel system calls. We also learned how to modify memory management allocators, components of the memory management layer, and how to implement kernel system calls. We also learned about the interactions between different memory management structs, like pages and the slob\_t struct. Lastly, we were able to test and see the results between the two algorithms.\\
 
 \end{document}
